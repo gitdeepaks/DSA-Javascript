@@ -1,5 +1,5 @@
-function hellowWorld() {
+function hello() {
   return "Hello World";
 }
 
-module.exports = hellowWorld;
+module.exports = hello;
