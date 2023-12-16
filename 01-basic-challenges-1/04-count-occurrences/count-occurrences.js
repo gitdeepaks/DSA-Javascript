@@ -1,13 +1,7 @@
 function countOccurrences(str, char) {
-  let count = 0;
+  const result = str.split(char).length - 1;
 
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] === char) {
-      count++;
-    }
-  }
-
-  return count;
+  return result;
 }
 
 module.exports = countOccurrences;
