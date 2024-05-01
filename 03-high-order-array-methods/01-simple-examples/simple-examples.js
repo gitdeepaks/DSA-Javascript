@@ -37,36 +37,29 @@ const numbers = [1, 2, 3, 4, 5];
 // /**
 //  * forEach: Iterates through array elements and applies a function without creating a new array.
 
-
 // numbers.forEach((element) => {
 //   console.log(element);
 // });
 
-
-
- /**
+/**
  * find: Returns the first array element that satisfies a specified condition.
  */
 
-
- const fundNum  = numbers.find((num) => num > 2)
+const fundNum = numbers.find((num) => num > 2);
 //  console.log(fundNum);
 
 /**
  * some: Checks if at least one array element satisfies a condition.
  */
 
-const hasEvenNumber = numbers.some((num) => num %2 === 0)
+const hasEvenNumber = numbers.some((num) => num % 2 === 0);
 
 // console.log(hasEvenNumber)
- 
 
 /**
  * every: Checks if all array elements satisfy a condition.
  */
 
-const allNumsgreThn0 = numbers.every((num) =>  num > 0)
+const allNumsgreThn0 = numbers.every((num) => num > 0);
 
-console.log(allNumsgreThn0)
-
-
+// console.log(allNumsgreThn0)
