@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "Brad Traversy",
+  "author": "Deepak Sankhyan",
   "license": "MIT",
   "devDependencies": {
     "jest": "^29.6.1"
