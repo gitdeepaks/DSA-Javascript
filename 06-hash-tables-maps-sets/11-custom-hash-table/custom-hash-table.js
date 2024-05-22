@@ -12,15 +12,15 @@ class HashTable {
     return hash % max;
   }
 
-  printTable() {
-    for (let i = 0; i < this.storage.length; i++) {
-      if (this.storage[i] !== undefined) {
-        console.log(`Bucket ${i}:${JSON.stringify(this.storage[i])}`);
-      } else {
-        console.log(`Bucket ${i} Empty`);
-      }
-    }
-  }
+  // printTable() {
+  //   for (let i = 0; i < this.storage.length; i++) {
+  //     if (this.storage[i] !== undefined) {
+  //       console.log(`Bucket ${i}:${JSON.stringify(this.storage[i])}`);
+  //     } else {
+  //       console.log(`Bucket ${i} Empty`);
+  //     }
+  //   }
+  // }
 
   set(key, value) {
     const index = this._hash(key, this.limit);
@@ -31,7 +31,7 @@ class HashTable {
       let inserted = false;
       for (let i = 0; i < this.storage[index]; i++) {
         if (this.storage[index][i][0] === key) {
-          this.storage[index][i][1] === value;
+          return this.storage[index][i][1] === value;
           inserted = true;
         }
       }
@@ -39,6 +39,63 @@ class HashTable {
         this.storage[index].push([key, value]);
       }
     }
+  }
+
+  remove(key) {
+    const index = this._hash(key, this.limit);
+
+    if (this.storage[index]) {
+      if (
+        this.storage[index].length === 1 &&
+        this.storage[index][0][0] === key
+      ) {
+        delete this.storage[index];
+      } else {
+        for (let i = 0; i < this.storage[index].length; i++) {
+          if (this.storage[index][i][0] === key) {
+            delete this.storage[index][i];
+          }
+        }
+      }
+    }
+  }
+
+  get(key) {
+    const index = this._hash(key, this.limit);
+
+    if (this.storage[index] === undefined) {
+      return undefined;
+    } else {
+      for (let i = 0; i < this.storage[index].length; i++) {
+        if (this.storage[index][i][0] === key) {
+          return this.storage[index][i][1];
+        }
+      }
+    }
+  }
+  has(key) {
+    const index = this._hash(key, this.limit);
+
+    if (this.storage[index]) {
+      for (let i = 0; i < this.storage[index].length; i++) {
+        if (this.storage[index][i][0] === key) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  printTable() {
+    for (let i = 0; i < this.storage.length; i++) {
+      if (this.storage[i] !== undefined) {
+        console.log(`Bucket ${i}:${JSON.stringify(this.storage[i])}`);
+      } else {
+        console.log(`Bucket ${i} Empty`);
+      }
+    }
+  }
+  clear() {
+    this.storage = [];
   }
 }
 
