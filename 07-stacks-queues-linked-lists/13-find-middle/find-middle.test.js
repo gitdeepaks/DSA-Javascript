@@ -1,8 +1,8 @@
-const { LinkedList } = require('./linked-list');
-const findMiddle = require('./find-middle');
+const { LinkedList } = require("./linked-list");
+const findMiddle = require("./find-middle");
 
-describe('findMiddle', () => {
-  test('should return the middle node for a linked list with an odd number of nodes', () => {
+describe("findMiddle", () => {
+  test("should return the middle node for a linked list with an odd number of nodes", () => {
     const list = new LinkedList();
     list.add(1);
     list.add(2);
@@ -14,7 +14,7 @@ describe('findMiddle', () => {
     expect(middleNode.data).toBe(3);
   });
 
-  test('should return the second middle node for a linked list with an even number of nodes', () => {
+  test("should return the second middle node for a linked list with an even number of nodes", () => {
     const list = new LinkedList();
     list.add(1);
     list.add(2);
