@@ -1,4 +1,6 @@
-class Node {}
+class Node {
+  constructor(data) {}
+}
 
 function recDepthFirstTraversal() {}
 
