@@ -1,7 +1,7 @@
-const { Node, maxDepth } = require('./maximum-depth');
+const { Node, maxDepth } = require("./maximum-depth");
 
-describe('Binary Tree Maximum Depth', () => {
-  test('Should calculate the maximum depth of a binary tree', () => {
+describe("Binary Tree Maximum Depth", () => {
+  test("Should calculate the maximum depth of a binary tree", () => {
     // Create the binary tree:    3
     //                           / \
     //                          9  20
@@ -22,12 +22,12 @@ describe('Binary Tree Maximum Depth', () => {
     expect(maxDepth(root)).toBe(3);
   });
 
-  test('Should handle a tree with a single root node', () => {
+  test("Should handle a tree with a single root node", () => {
     const root = new Node(1);
     expect(maxDepth(root)).toBe(1);
   });
 
-  test('Should calculate the maximum depth of a binary tree with only left children', () => {
+  test("Should calculate the maximum depth of a binary tree with only left children", () => {
     // Create the binary tree:    1
     //                           /
     //                          2
