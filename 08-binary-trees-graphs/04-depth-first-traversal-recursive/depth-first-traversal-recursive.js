@@ -1,10 +1,28 @@
 class Node {
-  constructor(data) {}
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
 }
 
-function recDepthFirstTraversal() {}
+function recDepthFirstTraversal(root) {
+  const res = [];
 
-m0odule.exports = {
+  function traverse(node) {
+    if (node !== null) {
+      res.push(node.data);
+      traverse(node.left);
+      traverse(node.right);
+    }
+  }
+
+  traverse(root);
+
+  return res;
+}
+
+module.exports = {
   Node,
   recDepthFirstTraversal,
 };
