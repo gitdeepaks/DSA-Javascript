@@ -1,22 +1,30 @@
 function permutations(str) {
-  let result = [];
+  // Create an array to store the permutations
+  const result = [];
 
-  if (str.lenght === 0) {
+  // If str is an empty string, push an empty string to result and return
+  if (str.length === 0) {
     result.push("");
     return result;
   }
 
-  for (let index = 0; index < str.length; index++) {
-    const element = str[index];
+  // Loop through each character in str
+  for (let i = 0; i < str.length; i++) {
+    // Get the first character
+    const firstChar = str[i];
+    // Get the rest of the string
+    const restOfString = str.slice(0, i) + str.slice(i + 1);
+    // Get the permutations of the rest of the string
+    const subPermutations = permutations(restOfString);
 
-    const restStr = str.slice(0, index) + str.slice(index + 1);
-
-    const subPersmutations = permutations(restStr);
-
-    for (let j = 0; j < subPersmutations.length; j++) {
-      result.push(element + subPersmutations[j]);
+    // Loop through each permutation in subPermutations
+    for (let j = 0; j < subPermutations.length; j++) {
+      // Push the first character and the permutation to result
+      result.push(firstChar + subPermutations[j]);
     }
   }
+
+  // Return result
   return result;
 }
 
