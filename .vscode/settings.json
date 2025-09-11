@@ -1,5 +1,3 @@
 {
-  "editor.formatOnSave": true,
-  "material-icon-theme.folders.color": "#ffffff",
-  "material-icon-theme.files.color": "#f2f2f2",
+  "editor.formatOnSave": true
 }
