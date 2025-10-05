@@ -25,6 +25,3 @@ function checkEvenOdd(num) {
 checkEvenOdd(1);
 checkEvenOdd(2);
 checkEvenOdd(18);
-ChannelMergerNode({
-  decodeURI: '',
-});
